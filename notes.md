@@ -56,3 +56,47 @@ where
 - Headings: You can use the `<h1>...</h1>` to `<h6>...</h6>` to specify headings and subheadings. Headings shouldn't be used for formatting, they are also used for accessibility.
 - Paragraphs: You can use the `<p>...</p>` for paragraph of text
 - Lists: you canse use unordered lists `<ul>...</ul>` or ordered lists `<ol>...</ol>`. Each element in the list is put inside an `<li>...</li>` element.
+
+## CSS basics
+
+CSS is a style sheet language to style HTLM elements. 
+
+You can link a CSS file called `style.css` using `<link href="styles/style.css" rel="stylesheet" />` in the `<head>` element of an html file.
+
+A CSS ruleset follows this pattern
+```css
+selector(s) {
+  property: property value;
+}
+```
+
+### Selectors
+
+The selector can contain multiple selectors separated by commas.
+
+There are multiple type of selectors:
+- Element selector: selects all HTML elements of the specified type. Example `p` selects all `<p>..</p>`
+- ID selector: select the element with ID. Selector `#my-id` would only select element `<p id="my-id">...</p>`
+- Class selector: select all elements with class. Selecting `.my-class` woud select all elements having attriue `class="my-class"`
+- Attribute selector: select all elements on the page with a given attribute. Selecting `img[src]` selects all `<img src="..."/>` but not `<img/>`. You can also specify the value.
+- Pseudo-class selector: select specified elements but only when in a specified stage. Selecting `a:hover` selects `<a>...</a>` but only when the mouse is hovering over the link
+- Pseudo-elements: select a part of an element rather than the element itself. For example `p::first-line` selects the first line inside `<p>...</p>` elements
+- Combinators: combine multiple selectors to target documents. Using `article > p` selects paragraph that are the direct children of `<article>`. `>` is the child combinator.
+
+### Fonts and texts
+
+You can grab some Google Fonts using `<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />` in the `<head>` element.
+
+
+Some useful property to control the fonts and texts are
+```css
+html {
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+```
+- `text-align`: alignment of the text
+- `line-height`
+- `letter-spacing`
+
+   
