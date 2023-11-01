@@ -98,5 +98,39 @@ html {
 - `text-align`: alignment of the text
 - `line-height`
 - `letter-spacing`
-
+- `padding` : space around the content
+- `border`: line around the padding
+- `margin`: space around the padding
+- `width` : width of an element
    
+Images need the `display: block` property because it's an inline element. 
+
+`margin: 0 auto;` the first value affects top and bottom and the second value affects left and right. `auto` is a special value that divides the available horizontal space evenly between left and right.
+
+## Forms
+
+Forms allow a user to enter data that is either used client-side to update the interface or send it to the server for processing and storage.
+
+A form is made of form controls, sometimes called widgets.
+
+The basic form is created using the `<form>` element such as
+```
+<form action="/my-handling-form-page" method="post">…</form>
+```
+The action attributes defines the URL where the data will be sent when submitted, the method indicates which HTTP method is used, usually a `get` or `post`.
+
+`<label>` have a `for` attribute that takes the `id` of the associated control form.
+
+The `<input>` tag is a void element, the `<textarea>` is not. To define the default value of an `<input>` element, you can use the `value` attribute.
+
+The `<button>` element accepts a `type` attribute of three values: `submit`, `reset`, `button`. 
+
+A `submit` button sends the form data to the web page defined in the `action` atribute of the `<form>` element.
+
+A click on the `reset` button resets all the widgets to their default value. It's generally considered bad practice.
+
+A click on the `button` does nothing. You can define it's behaviour using JavaScript.
+
+When styling you can use the selector with `:focus`
+
+When submitting the data, the `name` attribute on each widget acts as the key associated with the values.
