@@ -8,8 +8,7 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>+server: POST 
-https://studies.cs.helsinki.fi/exampleapp/new_note_spa  (sends the content of the new note and the timestamp)
+    browser->>+server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa  (sends the content of the new note and the timestamp)
     server-->>-browser: sends message with value note created
 
 ```
