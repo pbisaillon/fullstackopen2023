@@ -5,9 +5,8 @@ const Header1 = ({ title }) => <h1>{title}</h1>
 const Button = ({ handleClick, text }) => <button onClick={handleClick}>{text}</button>
 
 const Statistics = ({ good, neutral, bad }) => {
-  return (
-    <div>
-      <Header1 title='statistics' />
+  if ((good + neutral + bad) > 0) {
+    return (<div>
       <div>good {good}</div>
       <div>neutral {neutral}</div>
       <div>bad {bad}</div>
@@ -15,7 +14,10 @@ const Statistics = ({ good, neutral, bad }) => {
       <div>Avg {(good - bad) / (good + neutral + bad)}</div>
       <div>Positive {100.0 * good / (good + neutral + bad)}%</div>
     </div>
-  )
+    )
+  }
+
+  return (<div>No feedback given</div>)
 }
 
 const App = () => {
@@ -43,6 +45,7 @@ const App = () => {
       <Button handleClick={incrementGood} text='good' />
       <Button handleClick={incrementNeutral} text='neutral' />
       <Button handleClick={incrementBad} text='bad' />
+      <Header1 title='statistics' />
       <Statistics good={good} neutral={neutral} bad={bad} />
     </div>
   )
