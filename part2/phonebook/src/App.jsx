@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-const Persons = ({ persons }) => persons.map(person => <div key={person.name}> {person.name} {person.phone}</div>)
+const Persons = ({ persons }) => persons.map(person => <div key={person.id}> {person.name} {person.phone}</div>)
 
 
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', phone: '' }
+    { id:1, name: 'Arto Hellas', phone: '' }
   ])
   const [newName, setNewName] = useState('')
   const [newPhone, setNewPhone] = useState('')
@@ -19,7 +19,8 @@ const App = () => {
     if (index === -1) {
       const personObject = {
         name: newName,
-        phone: newPhone
+        phone: newPhone,
+        id: persons.length + 1,
       }
       setPersons(persons.concat(personObject))
     } else {
